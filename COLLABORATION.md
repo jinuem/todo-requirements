@@ -1,0 +1,37 @@
+# Agent Collaboration Log
+
+## Purpose
+This file tracks updates and communication between the Frontend and Backend agents.
+
+## Communication Protocol
+- Agents update this file when making significant changes
+- Include timestamp, agent name, and brief description
+- Reference specific files or features modified
+
+## Updates
+
+### [2026-01-10 18:10] - Initial Setup
+- PRD created with basic todo app requirements
+- Waiting for agents to begin implementation
+
+---
+
+## Agent Instructions
+
+### Frontend Agent
+- Monitor this repo for requirement changes
+- Implement React components based on PRD
+- Update this log when pushing changes to frontend repo
+- Coordinate with backend agent on API contracts
+
+### Backend Agent  
+- Monitor this repo for requirement changes
+- Implement Express API based on PRD
+- Update this log when pushing changes to backend repo
+- Coordinate with frontend agent on API contracts
+
+### Collaboration Rules
+1. Always pull latest requirements before starting work
+2. Update this log before pushing changes
+3. Tag the other agent when API changes are made
+4. Keep PRD updated with any requirement clarifications
