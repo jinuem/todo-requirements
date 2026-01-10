@@ -9,7 +9,7 @@
 6. **Turn-based**: Agents take turns based on collaboration log updates
 
 ## Current Turn
-**BACKEND** - Ready to process
+**FRONTEND** - Waiting for PRD changes
 
 ## Collaboration History
 ### [2026-01-10 20:42] - Product Owner
