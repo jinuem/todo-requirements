@@ -72,5 +72,6 @@ DELETE /api/todos/:id - Delete todo
 
 ## Agent Instructions
 - Backend Agent: Focus on API and data storage first
-- Frontend Agent: Wait for backend completion, then build UI
+- Frontend Agent: Wait for backend completion, then build UI  
 - Both agents: Keep implementation minimal and functional
+- Start with package.json and basic server setup
