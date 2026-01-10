@@ -3,7 +3,7 @@
 **Frontend Agent: React**
 **Backend Agent: Express + File Storage**
 **Document Type:** Single Source of Truth Requirements
-**Version:** 1.0.1
+**Version:** 1.0
 
 ---
 
