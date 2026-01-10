@@ -1,63 +1,76 @@
-# Todo App - Product Requirements Document
+# Simple Todo App - Product Requirements Document
 
 ## Overview
-A simple, full-stack todo application with React frontend and Express backend.
+A minimal, full-stack todo application with React frontend and Express backend for basic task management.
 
 ## Core Features
 
-### 1. Task Management
-- Create new tasks with title and description
-- Mark tasks as complete/incomplete
-- Delete tasks
-- Edit task details
+### 1. Essential Task Operations
+- Add new todo with title only (keep it simple)
+- Toggle todo completion status
+- Delete completed todos
+- View all todos in a single list
 
-### 2. Task Display
-- List all tasks
-- Filter by status (all, active, completed)
-- Show task count
+### 2. Simple UI Requirements
+- Clean, minimal interface
+- Add todo input field at top
+- Todo list below with checkboxes
+- Delete button for completed items
+- Show total count of active todos
 
-### 3. Data Persistence
-- Tasks stored in backend database
-- API endpoints for CRUD operations
+### 3. Basic Data Storage
+- Use JSON file for data persistence (no database needed initially)
+- Auto-save on every change
 
-## Technical Requirements
+## Technical Specifications
 
 ### Frontend (React)
-- Single page application
-- Responsive design
-- Real-time updates
-- Form validation
+- Single component app (App.js)
+- Use React hooks (useState, useEffect)
+- Fetch API for backend communication
+- Basic CSS styling
+- Port: 3000
 
 ### Backend (Express)
-- RESTful API
-- JSON responses
-- Error handling
-- CORS enabled
+- Simple Express server
+- JSON file storage (todos.json)
+- CORS enabled for localhost:3000
+- Port: 5000
 
-### API Endpoints
+### API Endpoints (Simplified)
 ```
-GET /api/tasks - Get all tasks
-POST /api/tasks - Create new task
-PUT /api/tasks/:id - Update task
-DELETE /api/tasks/:id - Delete task
+GET /api/todos - Get all todos
+POST /api/todos - Add new todo
+PUT /api/todos/:id - Toggle completion
+DELETE /api/todos/:id - Delete todo
 ```
 
-### Data Model
+### Data Model (Minimal)
 ```json
 {
-  "id": "string",
-  "title": "string",
-  "description": "string",
-  "completed": "boolean",
-  "createdAt": "datetime",
-  "updatedAt": "datetime"
+  "id": "number",
+  "title": "string", 
+  "completed": "boolean"
 }
 ```
 
+## Implementation Priority
+1. **BACKEND FIRST**: Create Express server with JSON storage
+2. **FRONTEND SECOND**: Create React app that consumes the API
+3. **INTEGRATION**: Connect frontend to backend
+4. **TESTING**: Manual testing of all features
+
 ## Development Status
-- [ ] Backend API setup
-- [ ] Database integration
+- [ ] Express server setup
+- [ ] JSON file storage
+- [ ] API endpoints implementation
+- [ ] React app creation
 - [ ] Frontend components
 - [ ] API integration
-- [ ] Testing
-- [ ] Deployment
+- [ ] Basic styling
+- [ ] Manual testing
+
+## Agent Instructions
+- Backend Agent: Focus on API and data storage first
+- Frontend Agent: Wait for backend completion, then build UI
+- Both agents: Keep implementation minimal and functional
