@@ -25,17 +25,19 @@ A minimal, full-stack todo application with React frontend and Express backend f
 ## Technical Specifications
 
 ### Frontend (React)
-- Single component app (App.js)
+- Single component app (App.js) - **MUST RENDER PROPERLY**
 - Use React hooks (useState, useEffect)
-- Fetch API for backend communication
+- Fetch API for backend communication - **INTEGRATE WITH http://localhost:5000**
 - Basic CSS styling
 - Port: 3000
+- **Unit tests with Jest and React Testing Library**
 
 ### Backend (Express)
 - Simple Express server
 - JSON file storage (todos.json)
 - CORS enabled for localhost:3000
 - Port: 5000
+- **Unit tests with Jest and Supertest**
 
 ### API Endpoints (Simplified)
 ```
@@ -55,23 +57,31 @@ DELETE /api/todos/:id - Delete todo
 ```
 
 ## Implementation Priority
-1. **BACKEND FIRST**: Create Express server with JSON storage
-2. **FRONTEND SECOND**: Create React app that consumes the API
-3. **INTEGRATION**: Connect frontend to backend
-4. **TESTING**: Manual testing of all features
+1. **BACKEND FIRST**: Create Express server with JSON storage ✅
+2. **FRONTEND SECOND**: Create React app that consumes the API ✅
+3. **INTEGRATION**: Connect frontend to backend - **CRITICAL FIX NEEDED**
+4. **TESTING**: Unit tests for both services
+5. **VALIDATION**: Manual testing of all features
+
+## Current Issues to Fix
+- **Frontend showing black screen** - needs proper component rendering
+- **API integration** - frontend must connect to backend properly
+- **Missing unit tests** - both services need test coverage
 
 ## Development Status
-- [ ] Express server setup
-- [ ] JSON file storage
-- [ ] API endpoints implementation
-- [ ] React app creation
-- [ ] Frontend components
-- [ ] API integration
+- [x] Express server setup
+- [x] JSON file storage
+- [x] API endpoints implementation
+- [x] React app creation
+- [ ] **Frontend UI rendering (URGENT)**
+- [ ] **API integration (URGENT)**
+- [ ] **Backend unit tests**
+- [ ] **Frontend unit tests**
 - [ ] Basic styling
 - [ ] Manual testing
 
 ## Agent Instructions
-- Backend Agent: Focus on API and data storage first
-- Frontend Agent: Wait for backend completion, then build UI  
-- Both agents: Keep implementation minimal and functional
+- Backend Agent: Add unit tests for all API endpoints using Jest
+- Frontend Agent: **URGENT** - Fix black screen, render todo UI, integrate with backend API
+- Both agents: Add comprehensive unit tests and ensure proper integration
 - Start with package.json and basic server setup
