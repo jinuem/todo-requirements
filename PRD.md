@@ -5,81 +5,55 @@ A minimal, full-stack todo application with React frontend and Express backend f
 
 ## Core Features
 
-### 1. User Authentication
-- Simple login page with username/password
-- Basic session management
-- Logout functionality
-- Protect todo routes (redirect to login if not authenticated)
-
-### 2. Essential Task Operations (Post-Login)
+### 1. Essential Task Operations
 - Add new todo with title only (keep it simple)
 - Toggle todo completion status
 - Delete completed todos
 - View all todos in a single list
-- User-specific todos (each user sees only their todos)
 
-### 3. Simple UI Requirements
-- **Login Page**: Clean login form with username/password fields
-- **Todo Dashboard**: Clean, minimal interface (shown after login)
+### 2. Simple UI Requirements
+- **Todo Dashboard**: Clean, minimal interface
 - Add todo input field at top
 - Todo list below with checkboxes
 - Delete button for completed items
 - Show total count of active todos
-- Logout button in header
 
 ### 3. Basic Data Storage
 - Use JSON file for data persistence (no database needed initially)
-- Store users and todos separately
-- Simple session storage (in-memory for now)
+- Store todos in simple JSON format
 - Auto-save on every change
 
 ## Technical Specifications
 
 ### Frontend (React)
-- **Login Component** - Simple login form
-- **Todo Dashboard Component** - Main todo interface (protected route)
+- **Todo Dashboard Component** - Main todo interface
 - Use React hooks (useState, useEffect)
-- React Router for navigation (login/dashboard)
 - Fetch API for backend communication - **INTEGRATE WITH http://localhost:5000**
 - Basic CSS styling
 - Port: 3000
 - **Unit tests with Jest and React Testing Library**
 
 ### Backend (Express)
-- **Authentication endpoints** - login/logout
-- **Session management** - simple in-memory sessions
-- **Protected todo endpoints** - require authentication
+- **Todo endpoints** - CRUD operations
 - Simple Express server
-- JSON file storage (users.json, todos.json)
+- JSON file storage (todos.json)
 - CORS enabled for localhost:3000
 - Port: 5000
 - **Unit tests with Jest and Supertest**
 
-### API Endpoints (Updated)
+### API Endpoints
 ```
-POST /api/auth/login - User login
-POST /api/auth/logout - User logout
-GET /api/auth/me - Get current user
-
-GET /api/todos - Get user's todos (protected)
-POST /api/todos - Add new todo (protected)
-PUT /api/todos/:id - Toggle completion (protected)
-DELETE /api/todos/:id - Delete todo (protected)
+GET /api/todos - Get all todos
+POST /api/todos - Add new todo
+PUT /api/todos/:id - Toggle completion
+DELETE /api/todos/:id - Delete todo
 ```
 
 ### Data Models
 ```json
-// User
+// Todo
 {
   "id": "number",
-  "username": "string",
-  "password": "string"
-}
-
-// Todo (Updated)
-{
-  "id": "number",
-  "userId": "number",
   "title": "string", 
   "completed": "boolean"
 }
@@ -87,17 +61,13 @@ DELETE /api/todos/:id - Delete todo (protected)
 
 ## Implementation Priority
 1. **BACKEND FIRST**: Create Express server with JSON storage ✅
-2. **ADD AUTHENTICATION**: Login/logout endpoints and session management
-3. **FRONTEND LOGIN**: Create login page and routing
-4. **FRONTEND TODO**: Update todo dashboard with authentication
-5. **INTEGRATION**: Connect frontend to backend with auth - **CRITICAL FIX NEEDED**
-6. **TESTING**: Unit tests for both services
-7. **VALIDATION**: Manual testing of all features
+2. **FRONTEND TODO**: Create todo dashboard
+3. **INTEGRATION**: Connect frontend to backend - **CRITICAL FIX NEEDED**
+4. **TESTING**: Unit tests for both services
+5. **VALIDATION**: Manual testing of all features
 
 ## Current Issues to Fix
-- **Add login page and authentication system**
-- **Update existing todo functionality to be user-specific**
-- **API integration** - frontend must connect to backend properly with auth
+- **API integration** - frontend must connect to backend properly
 - **Missing unit tests** - both services need test coverage
 
 ## Development Status
@@ -105,19 +75,14 @@ DELETE /api/todos/:id - Delete todo (protected)
 - [x] JSON file storage
 - [x] API endpoints implementation
 - [x] React app creation
-- [ ] **Authentication system (URGENT)**
-- [ ] **Login page (URGENT)**
-- [ ] **Protected routes (URGENT)**
-- [ ] **User-specific todos (URGENT)**
 - [ ] **Frontend UI rendering (URGENT)**
-- [ ] **API integration with auth (URGENT)**
+- [ ] **API integration (URGENT)**
 - [ ] **Backend unit tests**
 - [ ] **Frontend unit tests**
 - [ ] Basic styling
 - [ ] Manual testing
 
 ## Agent Instructions
-- Backend Agent: Add authentication endpoints, session management, and user-specific todo filtering
-- Frontend Agent: Create login page, implement routing, update todo dashboard with auth
-- Both agents: Add comprehensive unit tests and ensure proper authentication flow
-- Test with default user: username="admin", password="password"
+- Backend Agent: Ensure todo endpoints work properly with simplified data model
+- Frontend Agent: Create simple todo dashboard without authentication
+- Both agents: Add comprehensive unit tests and ensure proper API integration
